@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vmin;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(https://64.media.tumblr.com/08e91e63d866c7abeb03625dd4d57722/99c6b05e9b72df69-4c/s1280x1920/9a850f1459204bd7e36199cdcb4a52b4f87ee777.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://64.media.tumblr.com/08e91e63d866c7abeb03625dd4d57722/99c6b05e9b72df69-4c/s1280x1920/9a850f1459204bd7e36199cdcb4a52b4f87ee777.jpg);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+h1,
+figcaption {
+  color: white;
+}
+
+ul {
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+ul li {
+  list-style: none;
+  max-width: 10%;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+  -webkit-transition: max-width 1.5s;
+  transition: max-width 1.5s;
+  border-radius: 20px;
+}
+
+ul li:hover {
+  max-width: 100%;
+  -webkit-filter: brightness(110%) saturate(155%);
+          filter: brightness(110%) saturate(155%);
+  -webkit-transition: max-width 3s, border-radius 1s;
+  transition: max-width 3s, border-radius 1s;
+}
+
+ul li figcaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5vmin;
+}
+
+ul li img {
+  margin: 0 7px;
+  max-height: 55vmin;
+  -webkit-transition: border-radius 1s , -webkit-transform 1s;
+  transition: border-radius 1s , -webkit-transform 1s;
+  transition: transform 1s , border-radius 1s;
+  transition: transform 1s , border-radius 1s , -webkit-transform 1s;
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0) 8px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+ul li img:hover {
+  -webkit-transition: border 1.4s, border-radius 1s ,-webkit-transform 1s;
+  transition: border 1.4s, border-radius 1s ,-webkit-transform 1s;
+  transition: transform 1s ,border 1.4s, border-radius 1s;
+  transition: transform 1s ,border 1.4s, border-radius 1s ,-webkit-transform 1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: solid #879590 8px;
+}
+/*# sourceMappingURL=styles.css.map */

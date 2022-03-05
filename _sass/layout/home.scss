@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+        font-family: 'Lato', sans-serif;
+    font-size: 62.5%;
+}
+
+// ***** COLORS
+$transparent: rgba(255, 255, 255, 0);
+$navy: #285ff7;
+$silver: #879590;
+$hashnode-font: #333;
+$light-black: #23252f;
+$dark-black: #161724;
+$neon-green: #64ed85;
+$dark-red: #890402;
+$twitter: #00a9e8;
+
+
+// ********
+// **** MIXINS
+@mixin basics($w, $h, $color) {
+    width: $w;
+    height: $h;
+    background: $color;
+}
+
+@mixin position($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex($direction,$align-items, $justify-content) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+// *********************************
+// *********************************
+
+body {
+    min-height: 100vmin;
+    width: 100%;
+    overflow-y: hidden;
+    color: white;
+
+    // background: #ccc;
+    background: linear-gradient(rgba(black, .5),rgba(black, .5) ), url(https://64.media.tumblr.com/08e91e63d866c7abeb03625dd4d57722/99c6b05e9b72df69-4c/s1280x1920/9a850f1459204bd7e36199cdcb4a52b4f87ee777.jpg);
+    background-position: center;
+    background-size: cover;
+    @include flex(column, center, space-evenly);
+}
+
+h1 {
+    position: fixed;
+    top: 5%;
+    font-size: 4.5vmin;
+    letter-spacing: .6vmin;
+    animation: move-in-right 1.5s forwards ease-in;
+}
+
+ul {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    animation: appear 1s 1.5s backwards ease-in;
+    li {
+        list-style: none;
+        max-width: 10%;
+        filter: brightness(80%);    
+        transition: max-width 1.5s;
+        border-radius: 20px;
+        &:hover {
+            max-width: 100%;
+            filter: brightness(110%) saturate(155%);    
+            transition: max-width 3s, border-radius 1s;
+        }
+        figcaption {
+            @include flex(row, center, center);
+            margin-top: 3.3vmin;
+            font-size: 1.9vmin;            
+        }
+        img {
+            margin: 0 7px;
+
+            max-height: 55vmin;
+            transition: transform 1s , border-radius 1s;
+            border-radius: 20px;
+            border: solid $transparent 3px;
+            transform: scale(1);
+
+            &:hover {
+                transition: transform 1s ,border 1.4s, border-radius 1s;
+                transform: scale(1.1);
+                border: solid darken($dark-red, 12%) 3px;
+               }
+            }
+    }
+}
+
+// buttons
+.button {
+    position: fixed;
+    bottom: 1.7vmin;
+    // link
+    a {
+        transition: color .4s;
+        text-decoration: none;
+    }
+
+    i {
+        transition: transform .7s;
+        &:hover {
+            transform: scale(1.03);
+        }
+        &:active {
+            color: $dark-red;
+            transform: translateY(.2vmin);
+        }
+    }
+}
+
+
+//  play button
+.play {
+    right: 3vmin;
+    font-size: 8vmin;
+    a {
+        &:link,
+        &:visited {
+            color: $silver
+        }
+        &:hover {
+            color: lighten($silver, 25%);
+        }
+        
+
+    }
+}
+
+
+// twitter button
+.twitter {
+    left: 3vmin;
+    font-size: 6vmin;
+    a {        
+        &:link,
+        &:visited {
+            color: darken($twitter, 20%);
+        }
+        &:hover {
+            color: $twitter;
+        }        
+        // &:active {
+        //     color: $dark-red;
+        //     transform: translateX(50px);
+        // }
+    }
+}
+
+
+
+// a:link - a normal, unvisited link
+// a:visited - a link the user has visited
+// a:hover - a link when the user mouses over it
+// a:active - a link the moment it is clicked
+
+
+
+// *******************
+// anmation
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-in-right {
+   0% {
+       transform: translateX(0);
+   }
+   40% {
+    transform: translateX(15px);
+   }
+
+   80% {
+    transform: translateX(-5px);
+
+   }
+   100% {
+    transform: translateX(0);
+   }
+}
+
